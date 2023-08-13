@@ -23,7 +23,7 @@ public class CurrencyConverter {
     	}
         double result;
         
-        // handle small letters
+        // handle small letter
         fromCurrency = fromCurrency.toUpperCase();
         toCurrency = toCurrency.toUpperCase();
         switch (fromCurrency) {
@@ -39,6 +39,7 @@ public class CurrencyConverter {
             default:
                 throw new IllegalArgumentException("Invalid source currency: " + fromCurrency);
         }
+//        return Math.round(result * 100.0) / 100.0;
         return result;
     }
 
