@@ -18,7 +18,14 @@ public class CurrencyConverter {
     }
 
     public double convert(double amount, String fromCurrency, String toCurrency) {
+    	if(amount < 0) {
+    		throw new IllegalArgumentException("Invalid amount: Amount can not be negative");
+    	}
         double result;
+        
+        // handle small letters
+        fromCurrency = fromCurrency.toUpperCase();
+        toCurrency = toCurrency.toUpperCase();
         switch (fromCurrency) {
             case "USD":
                 result = convertFromUSD(amount, toCurrency);
